@@ -1,13 +1,13 @@
-# 🚚 Courier Tracking Application
+# Courier Tracking Application
 
 This is a full-stack web application for tracking courier shipments. Users can check their order status, and the admin can update shipment progress in real-time.
 
-## 🛠 Tech Stack
+## Tech Stack
 - **Frontend**: React.js
 - **Backend**: Node.js, Express.js
 - **Database**: MySQL
 
-## 📁 Project Structure
+## Project Structure
 ```
 Courier-Tracking-App/
 │
@@ -28,7 +28,7 @@ Courier-Tracking-App/
 └── package.json
 ```
 
-## 🚀 Features
+## Features
 - User authentication (login, registration)
 - Admin dashboard to update order statuses
 - Live tracking of courier shipment stages:
@@ -38,7 +38,7 @@ Courier-Tracking-App/
   - Out for Delivery
   - Delivered
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 ```bash
@@ -78,7 +78,7 @@ CREATE DATABASE courier_db;
 -- Then import schema.sql or use your schema structure
 ```
 
-## ✅ TODO (Optional Enhancements)
+## TODO (Optional Enhancements)
 - Add Google Maps API for live courier location.
 - Add email/SMS notifications.
 - Add unit testing (Jest or Mocha).
