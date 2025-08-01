@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import logo from "../../assets/images/logo.png";
 import "./MainLayout.css";
 
 const MainLayout = () => {

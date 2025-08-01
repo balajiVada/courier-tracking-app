@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./AuthLayout.css";
 import shippingImg from "../../assets/images/Take Away-pana.png";
-import ctkLogo from "../../assets/images/logo test 1 (1).png";
 
 const AuthLayout = () => {
   return (
