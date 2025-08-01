@@ -1,0 +1,442 @@
+/* #placeOrderPage {
+    background: #57B4BA;
+    background: linear-gradient(180deg,  rgba(253, 251, 238, 1) 0%, rgba(87, 180, 186, 0.8) 50%, rgba(253, 251, 238, 1) 100%);
+}
+
+#order-form {
+    font-size: 1.3em;
+}
+
+#order-form label {
+    font-size: 16px;
+    color: #004B4F;
+}
+
+#order-form h3 {
+    color: #006A71;
+}
+
+#order-title {
+    display: flex;
+    margin: 50px 0px 25px 0px;
+}
+
+.order-line {
+    width: 30%;
+    height: 2px;
+    background-color: #004B4F;
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    
+    padding: 18px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+
+    background-color: #FDFBEE;
+}
+
+.po-grp-divs {
+    display: flex;
+}
+
+.po-sub-divs {
+    padding: 7px;
+}
+
+.po-sub-divs input{
+    width: 100%;
+}
+
+.long-field {
+    border-radius: 0;
+    height: 75px;
+}
+
+hr {
+    margin: 12px 0px 20px 0px;
+}
+
+#order-btn {
+    align-self: center;
+    font-size: 20px;
+    width: 15%;
+
+    margin-bottom: 60px;
+}
+
+
+.result-message {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 10px;
+  font-family: sans-serif;
+
+  height: 500px;
+}
+
+.success {
+  color: #1a7f1a;
+  background-color: rgba(253, 251, 238, 1);
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #a11a1a;
+  border: 1px solid #a11a1a;
+} */
+
+
+/* General Body and Container */
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fcfcfc; /* A clean, light background */
+    color: #333;
+}
+
+#placeOrderPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at top for longer forms */
+    padding: 40px 15px; /* Reduced overall padding for the page */
+    /* Reverted to a gradient similar to your original */
+    background: linear-gradient(180deg, rgba(253, 251, 238, 1) 0%, rgba(87, 180, 186, 0.5) 50%, rgba(253, 251, 238, 1) 100%);
+}
+
+/* Form Container */
+#order-form {
+    background-color: #FDFBEE; /* Your original light yellow/beige for the form */
+    border-radius: 12px; /* Slightly softer rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); /* More subtle shadow */
+    padding: 30px; /* Reduced padding */
+    max-width: 900px; /* Reduced max width for the form */
+    width: 100%; /* Ensures it takes available width up to max */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Reduced spacing between main sections */
+}
+
+/* Form Header (Title) */
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+.form-line {
+    flex-grow: 1; /* Makes lines expand */
+    height: 1px; /* Slightly thinner line */
+    background-color: #004B4F; /* Your original dark teal */
+    margin: 0 10px; /* Reduced margin */
+}
+
+.form-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem); /* Reduced font size for title */
+    color: #006A71; /* Your original dark teal for the main title */
+    font-weight: 700;
+    white-space: nowrap; /* Prevent title from wrapping */
+}
+
+/* Form Sections Grid */
+.form-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min column width reduced */
+    gap: 25px; /* Reduced gap between form sections */
+}
+
+.form-section {
+    background-color: #FDFBEE; /* Your original light yellow/beige for sections */
+    background-color: #f7f2e4;
+    border: 1px solid #004B4F; /* Your original dark teal border */
+    border-radius: 8px; /* Slightly smaller radius */
+    padding: 25px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between fields within a section */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02); /* Very light shadow */
+}
+
+.form-section h3 {
+    font-size: 1.4rem; /* Reduced font size for section headings */
+    color: #006A71; /* Your original dark teal for section headings */
+    margin-top: 0;
+    margin-bottom: 12px; /* Reduced margin */
+    padding-bottom: 8px; /* Reduced padding */
+    border-bottom: 1px solid #004B4F; /* Your original dark teal for separator */
+}
+
+/* Individual Form Fields */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-field label {
+    font-size: 0.9rem; /* Reduced font size for labels */
+    color: #004B4F; /* Your original dark teal for labels */
+    margin-bottom: 6px; /* Reduced margin */
+    font-weight: 500;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="tel"],
+.form-field input[type="number"],
+.form-field input[type="date"],
+.form-field select,
+.form-field textarea {
+    padding: 10px 12px; /* Reduced padding */
+    border: 1px solid #004B4F; /* Your original dark teal border */
+    border-radius: 6px; /* Slightly smaller rounded corners */
+    font-size: 0.95rem; /* Reduced font size for input text */
+    color: #495057;
+    transition: all 0.3s ease;
+    width: 100%; /* Ensure inputs take full available width */
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #ffffff; /* White input background for clarity */
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #57B4BA; /* Your original light blue/green on focus */
+    box-shadow: 0 0 0 2px rgba(87, 180, 186, 0.3); /* Subtle glow using your color, reduced spread */
+    outline: none;
+}
+
+.form-field textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 70px; /* Reduced minimum height for textareas */
+}
+
+/* Grouping for specific fields (e.g., package dimensions) */
+.form-field-group {
+    display: flex;
+    gap: 15px; /* Reduced gap */
+    width: 100%;
+}
+
+.form-field-group .form-field {
+    flex: 1; /* Each field takes equal space */
+}
+
+/* Submit Button */
+#order-submit-btn {
+    padding: 12px 30px; /* Reduced padding */
+    background-color: #57B4BA; /* Your original button color */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly smaller radius */
+    font-size: 1.05rem; /* Reduced font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: center; /* Center the button */
+    margin-top: 15px; /* Reduced space above button */
+    box-shadow: 0 4px 10px rgba(87, 180, 186, 0.2); /* Subtle shadow using your color */
+}
+
+#order-submit-btn:hover {
+    background-color: #006A71; /* A darker teal on hover, from your palette */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(87, 180, 186, 0.3);
+}
+
+#order-submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(87, 180, 186, 0.15);
+}
+
+/* Result Messages (Success/Error) */
+.result-message {
+  text-align: center;
+  margin-top: 30px; /* Reduced margin */
+  padding: 40px; /* Reduced padding */
+  border-radius: 12px; /* Softer corners */
+  font-family: 'Inter', sans-serif;
+  max-width: 500px; /* Reduced max width */
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  background-color: #FDFBEE; /* Your original light yellow/beige for messages */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  min-height: 250px; /* Reduced minimum height */
+}
+
+.result-message h2 {
+  font-size: 1.8rem; /* Reduced font size */
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.result-message p {
+  font-size: 1.05rem; /* Reduced font size */
+  line-height: 1.5;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.result-message strong {
+    font-weight: 700;
+}
+
+.tracking-id-display {
+    font-size: 1.3rem; /* Reduced font size */
+    color: #006A71; /* Your dark teal for the tracking ID */
+    background-color: #E0F2F7; /* A lighter shade of your blue/green for the background */
+    padding: 8px 15px; /* Reduced padding */
+    border-radius: 6px; /* Reduced radius */
+    margin-top: 8px; /* Reduced margin */
+    margin-bottom: 25px; /* Reduced margin */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid #57B4BA; /* Border with your blue/green */
+}
+
+
+.success {
+  color: #006A71; /* Your dark teal for success text */
+  background-color: #FDFBEE; /* Your original light yellow/beige background */
+  border: 1px solid #57B4BA; /* Your original light blue/green border */
+}
+
+.error {
+  background-color: #FFE0B2; /* A light orange/peach to indicate error within your palette */
+  color: #D32F2F; /* A standard red for error text */
+  border: 1px solid #FF9800; /* A darker orange for the border */
+}
+
+.return-button {
+    background-color: #004B4F; /* Your dark teal for the button */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Reduced padding */
+    border-radius: 6px; /* Reduced radius */
+    font-size: 0.95rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.return-button:hover {
+    background-color: #006A71; /* A lighter teal on hover */
+    transform: translateY(-1px);
+}
+
+/* Responsive Design (already somewhat scaled down, but fine-tune if needed) */
+@media (max-width: 768px) {
+    #placeOrderPage {
+        padding: 30px 10px;
+    }
+
+    #order-form {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-sections-grid {
+        gap: 20px;
+    }
+
+    .form-section {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .form-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .form-field-group {
+        gap: 12px;
+    }
+
+    #order-submit-btn {
+        width: 90%;
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    .result-message {
+        padding: 30px 15px;
+        margin-top: 25px;
+    }
+
+    .result-message h2 {
+        font-size: 1.6rem;
+    }
+
+    .result-message p {
+        font-size: 0.95rem;
+    }
+
+    .tracking-id-display {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #order-form {
+        padding: 15px;
+    }
+
+    .form-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .form-field label {
+        font-size: 0.8rem;
+    }
+
+    #order-submit-btn {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 8px 20px;
+    }
+
+    .result-message h2 {
+        font-size: 1.3rem;
+    }
+
+    .result-message p {
+        font-size: 0.9rem;
+    }
+
+    .tracking-id-display {
+        font-size: 1rem;
+    }
+}
