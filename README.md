@@ -42,7 +42,7 @@ Courier-Tracking-App/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/courier-tracking-app.git
+git clone https://github.com/balajiVada/courier-tracking-app.git
 cd courier-tracking-app
 ```
 
