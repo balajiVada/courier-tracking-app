@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import './UserProfile.css'; 
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
+
 function UserProfile() {
   const [upUserId, setUpUserId] = useState(null);
   const [upUserData, setUpUserData] = useState(null);
@@ -16,9 +18,6 @@ function UserProfile() {
   const [upMessage, setUpMessage] = useState(''); 
 
   const navigate = useNavigate(); 
-
-  // Base URL for your backend API
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
   useEffect(() => {
     const storedUserId = localStorage.getItem('user_id');

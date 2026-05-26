@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./AdminProfile.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
+
 function AdminProfilePage() {
   const [apUserId, setApUserId] = useState(null);
   const [apUserData, setApUserData] = useState(null);
@@ -14,7 +16,6 @@ function AdminProfilePage() {
   const [apMessage, setApMessage] = useState("");
 
   const navigate = useNavigate();
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
   useEffect(() => {
     const storedUserId = localStorage.getItem("user_id");
