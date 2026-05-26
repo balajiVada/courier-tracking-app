@@ -11,8 +11,18 @@ const { updateOrderCurrentLocationInDB } = require('./controllers/orderControlle
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+
+app.use(cors({
+    origin: frontendUrl,
+    credentials: true
+}));
 app.use(express.json());
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/orders', orderRoutes);
@@ -21,8 +31,9 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
+        origin: process.env.FRONTEND_URL || "http://localhost:3000",
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
