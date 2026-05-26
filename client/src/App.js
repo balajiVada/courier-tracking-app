@@ -18,7 +18,7 @@ import OrderUpdatePage from './pages/OrderUpdatePage';
 
 
 const ProtectedRoute = ({ children }) => {
-  const { user, setUser } = useAuth();
+  const { user } = useAuth();
 
   if (!user && !localStorage.getItem("user_id")) {
     return <Navigate to="/login" replace />;

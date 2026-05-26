@@ -70,6 +70,7 @@ const OrderUpdatePage = () => {
     if (trackingIdParam) {
       handleTrack({ preventDefault: () => {} });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackingIdParam]);
 
   useEffect(() => {

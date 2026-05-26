@@ -121,7 +121,6 @@ const TrackOrderPage = () => {
 
   const defaultMapCenter = [17.385, 78.4867];
   const mapCenter = liveLat && liveLng ? [liveLat, liveLng] : defaultMapCenter;
-  const mapZoom = liveLat && liveLng ? 13 : 10;
 
   const isStatusCompleted = (status) => {
     const map = {
