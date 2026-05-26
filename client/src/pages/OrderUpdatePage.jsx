@@ -40,7 +40,8 @@ const OrderUpdatePage = () => {
   const watchId = useRef(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:4000");
+    const SOCKET_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000/api").replace('/api', '');
+    const newSocket = io(SOCKET_URL);
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
@@ -139,10 +140,10 @@ const OrderUpdatePage = () => {
   const handleTrack = async (e) => {
     e.preventDefault();
     try {
-      const orderRes = await axios.get(`http://localhost:4000/api/orders/${trackingId}`);
+      const orderRes = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/${trackingId}`);
       const orderData = orderRes.data;
 
-      const statusRes = await axios.get(`http://localhost:4000/api/orders/status/${trackingId}`);
+      const statusRes = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/status/${trackingId}`);
       const currentOrderStatus = statusRes.data.status;
 
       const index = stages.indexOf(currentOrderStatus);
@@ -167,7 +168,7 @@ const OrderUpdatePage = () => {
 
   const handleStatusUpdate = async () => {
     try {
-      const res = await axios.post("http://localhost:4000/api/orders/update-status", {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/update-status`, {
         tracking_id: trackingId,
         new_status: selectedStatus,
       });

@@ -188,7 +188,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:4000/api/auth/signup", {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/auth/signup`, {
         first_name: formData.firstName,
         last_name: formData.lastName,
         full_name: `${formData.firstName} ${formData.lastName}`,

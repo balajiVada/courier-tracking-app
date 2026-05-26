@@ -40,7 +40,7 @@ const PlaceOrderPage = () => {
         user_id: user
       };
 
-      const res = await axios.post("http://localhost:4000/api/orders/place", orderInfo);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/place`, orderInfo);
       setTrackingId(res.data.tracking_id);
       setStatus("success");
     } catch (error) {

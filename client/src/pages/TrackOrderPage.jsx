@@ -40,7 +40,8 @@ const TrackOrderPage = () => {
       return;
     }
 
-    const newSocket = io("http://localhost:4000");
+    const SOCKET_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000/api").replace('/api', '');
+    const newSocket = io(SOCKET_URL);
 
     newSocket.on("connect", () => {
       newSocket.emit("join_room", routeTrackingId);
@@ -56,8 +57,8 @@ const TrackOrderPage = () => {
     const fetchOrder = async () => {
       try {
         const [orderRes, statusRes] = await Promise.all([
-          fetch(`http://localhost:4000/api/orders/${routeTrackingId}`),
-          fetch(`http://localhost:4000/api/orders/${routeTrackingId}/status-history`),
+          fetch(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/${routeTrackingId}`),
+          fetch(`${process.env.REACT_APP_API_URL || "http://localhost:4000/api"}/orders/${routeTrackingId}/status-history`),
         ]);
 
         const orderJson = await orderRes.json();

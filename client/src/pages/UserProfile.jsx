@@ -18,7 +18,7 @@ function UserProfile() {
   const navigate = useNavigate(); 
 
   // Base URL for your backend API
-  const API_BASE_URL = 'http://localhost:4000/api';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
   useEffect(() => {
     const storedUserId = localStorage.getItem('user_id');
